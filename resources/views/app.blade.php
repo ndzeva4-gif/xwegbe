@@ -7,6 +7,19 @@
         {{-- Inline script to detect system dark mode preference and apply it immediately --}}
         <script>
             (function() {
+                // Always land on the top of the page on a fresh load, even if the
+                // URL still carries a #section hash from a previous visit — the
+                // welcome screen should always open on the hero, not mid-page.
+                if ('scrollRestoration' in history) {
+                    history.scrollRestoration = 'manual';
+                }
+                if (window.location.hash) {
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                }
+                window.scrollTo(0, 0);
+            })();
+
+            (function() {
                 const appearance = '{{ $appearance ?? "system" }}';
 
                 if (appearance === 'system') {

@@ -58,6 +58,7 @@ const TOURIST_SITES: InfoCardData[] = [
         description:
             'Dix palais de terre, ornés de bas-reliefs racontant l’histoire des rois du royaume du Dahomey (1600-1894), ancienne capitale du pays.',
         photoLabel: 'Palais royaux d’Abomey',
+        photoSrc: '/images/benin/site-abomey.jpg',
         accent: 'gold',
     },
     {
@@ -74,7 +75,8 @@ const TOURIST_SITES: InfoCardData[] = [
         tag: 'Réserve de biosphère UNESCO',
         description:
             '4 700 km² au nord du pays : lions, éléphants, guépards et plus de 400 espèces d’oiseaux, l’une des dernières grandes savanes sauvages d’Afrique de l’Ouest.',
-        photoLabel: 'Faune du parc de la Pendjari',
+        photoLabel: 'Entrée du parc de la Pendjari',
+        photoSrc: '/images/benin/site-pendjari.jpg',
         accent: 'orange',
     },
     {
@@ -108,11 +110,11 @@ const TOURIST_SITES: InfoCardData[] = [
 
 const MODERN_PLACES: InfoCardData[] = [
     {
-        title: 'Sèmè City',
-        tag: 'Cité de l’innovation',
+        title: 'Aéroport Cardinal Bernardin Gantin',
+        tag: 'Infrastructure',
         description:
-            '336 hectares dédiés à l’enseignement supérieur, la recherche et l’économie du savoir, opérationnelle depuis la rentrée 2025. L’un des grands projets du programme Bénin Révélé.',
-        photoLabel: 'Campus de Sèmè City',
+            'L’aéroport international de Cotonou se modernise : extension du terminal, nouvelles zones commerciales, capacité doublée. Un chantier de 20 milliards de FCFA porté par Bénin Révélé.',
+        photoLabel: 'Aéroport de Cotonou',
         accent: 'orange',
     },
     {
@@ -155,13 +157,13 @@ const MODERN_PLACES: InfoCardData[] = [
 
 export function EventsSection() {
     return (
-        <section id="evenements" className="bg-night px-6 py-20 sm:px-10">
+        <section id="evenements" className="scroll-mt-24 bg-night px-6 py-20 sm:px-10">
             <div className="mx-auto max-w-6xl">
                 <SectionHeading
                     accent="orange"
-                    eyebrow="Autres rendez-vous"
+                    eyebrow="Temps forts"
                     title="À ne pas manquer au Bénin"
-                    lead="Savanna Nova n'est pas la seule occasion de vivre le Bénin en musique — voici deux temps forts bien réels du calendrier local."
+                    lead="Deux rendez-vous incontournables rythment le calendrier béninois, entre spiritualité et scène urbaine."
                 />
                 <div className="mt-10 grid gap-6 sm:grid-cols-2">
                     {EVENTS.map((event, i) => (
@@ -205,7 +207,7 @@ export function EventsSection() {
 
 export function CultureSection() {
     return (
-        <section id="culture" className="bg-night-elevated px-6 py-20 sm:px-10">
+        <section id="culture" className="scroll-mt-24 bg-night-elevated px-6 py-20 sm:px-10">
             <div className="mx-auto max-w-6xl">
                 <SectionHeading
                     accent="magenta"
@@ -227,7 +229,7 @@ export function CultureSection() {
 
 export function TouristSitesSection() {
     return (
-        <section id="sites" className="bg-night px-6 py-20 sm:px-10">
+        <section id="sites" className="scroll-mt-24 bg-night px-6 py-20 sm:px-10">
             <div className="mx-auto max-w-6xl">
                 <SectionHeading
                     accent="teal"
@@ -248,7 +250,7 @@ export function TouristSitesSection() {
 
 export function ModernBeninSection() {
     return (
-        <section id="moderne" className="bg-night-elevated px-6 py-20 sm:px-10">
+        <section id="moderne" className="scroll-mt-24 bg-night-elevated px-6 py-20 sm:px-10">
             <div className="mx-auto max-w-6xl">
                 <SectionHeading
                     accent="green"
@@ -269,7 +271,7 @@ export function ModernBeninSection() {
 
 export function FutureProjectsSection() {
     return (
-        <section id="avenir" className="bg-night px-6 py-20 sm:px-10">
+        <section id="avenir" className="scroll-mt-24 bg-night px-6 py-20 sm:px-10">
             <div className="mx-auto max-w-6xl">
                 <Reveal>
                     <div className="rounded-3xl border border-cream/10 bg-gradient-to-br from-pagne-orange/10 via-night-elevated to-pagne-magenta/10 p-10 sm:p-14">
@@ -277,7 +279,7 @@ export function FutureProjectsSection() {
                             accent="gold"
                             eyebrow="Projets d'avenir"
                             title="Un pays qui se réinvente"
-                            lead="Porté par le programme Bénin Révélé, le pays multiplie les grands chantiers — innovation, tourisme, infrastructures — pour écrire une nouvelle page de son histoire. Savanna Nova s'inscrit dans cet élan : donner au monde une nouvelle raison de découvrir le Bénin."
+                            lead="Porté par le programme Bénin Révélé, le pays multiplie les grands chantiers — innovation, tourisme, infrastructures — pour écrire une nouvelle page de son histoire. Xwégbé existe pour raconter cet élan : donner au monde une nouvelle raison de découvrir le Bénin."
                         />
                     </div>
                 </Reveal>

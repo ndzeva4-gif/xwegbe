@@ -73,31 +73,26 @@
     --color-night: #120a08;
     --color-night-elevated: #1c1210;
     --color-cream: #fdfbf9;
-
-    --animate-marquee: marquee 32s linear infinite;
-}
-
-@keyframes marquee {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
 }
 
 @utility pattern-weave {
     background-image:
         repeating-linear-gradient(
             45deg,
-            color-mix(in oklab, var(--color-pagne-gold) 20%, transparent) 0 3px,
-            transparent 3px 16px
+            color-mix(in oklab, var(--color-pagne-gold) 45%, transparent) 0 3px,
+            transparent 3px 11px
         ),
         repeating-linear-gradient(
             -45deg,
-            color-mix(in oklab, var(--color-pagne-orange) 16%, transparent) 0 3px,
-            transparent 3px 16px
+            color-mix(in oklab, var(--color-pagne-orange) 38%, transparent) 0 3px,
+            transparent 3px 11px
+        ),
+        repeating-linear-gradient(
+            45deg,
+            color-mix(in oklab, black 35%, transparent) 5px 7px,
+            transparent 7px 11px
         );
+    background-color: var(--color-night-elevated);
 }
 
 :root {
