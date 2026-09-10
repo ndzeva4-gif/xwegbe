@@ -1,5 +1,5 @@
 # Stage 1: build frontend assets (Tailwind CSS + React/Inertia bundle + self-hosted fonts)
-FROM node:22-slim AS assets
+FROM node:24-slim AS assets
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
