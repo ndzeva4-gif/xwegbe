@@ -1,4 +1,5 @@
 import { Form, Head } from '@inertiajs/react';
+import { GoogleLoginButton } from '@/components/google-login-button';
 import InputError from '@/components/input-error';
 import PasswordInput from '@/components/password-input';
 import TextLink from '@/components/text-link';
@@ -17,6 +18,17 @@ export default function Register({ passwordRules }: Props) {
     return (
         <>
             <Head title="Register" />
+
+            <div className="mb-6 flex flex-col gap-6">
+                <GoogleLoginButton label="S'inscrire avec Google" />
+
+                <div className="text-muted-foreground relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
+                    <span className="bg-background relative z-10 px-2">
+                        ou
+                    </span>
+                </div>
+            </div>
+
             <Form
                 {...store.form()}
                 resetOnSuccess={['password', 'password_confirmation']}
