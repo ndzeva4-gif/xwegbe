@@ -1,4 +1,6 @@
-import AuthLayoutTemplate from '@/layouts/auth/auth-simple-layout';
+import { usePage } from '@inertiajs/react';
+import AuthSimpleLayout from '@/layouts/auth/auth-simple-layout';
+import AuthSplitLayout from '@/layouts/auth/auth-split-layout';
 
 export default function AuthLayout({
     title = '',
@@ -9,9 +11,12 @@ export default function AuthLayout({
     description?: string;
     children: React.ReactNode;
 }) {
+    const { component } = usePage();
+    const Layout = component === 'auth/login' ? AuthSplitLayout : AuthSimpleLayout;
+
     return (
-        <AuthLayoutTemplate title={title} description={description}>
+        <Layout title={title} description={description}>
             {children}
-        </AuthLayoutTemplate>
+        </Layout>
     );
 }

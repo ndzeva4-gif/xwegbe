@@ -3,6 +3,17 @@ import { ACCENT_TEXT, PhotoSlot, type PagneAccent } from '@/components/festival/
 import { Reveal } from '@/components/festival/reveal';
 import { SectionHeading } from '@/components/festival/section-heading';
 
+/*
+ * Mobile : les cartes sont sur une seule rangée qu'on fait défiler du doigt
+ * de droite à gauche (swipe), chaque carte s'accroche au bord.
+ * À partir de "sm" (tablette / ordinateur) : on retrouve la grille normale.
+ */
+const SWIPE =
+    '-mx-6 flex snap-x snap-mandatory scroll-px-6 overflow-x-auto overflow-y-hidden px-6 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:overflow-visible sm:px-0 sm:pb-0';
+
+/* Largeur d'une carte dans la rangée mobile : on voit un bout de la suivante. */
+const SWIPE_ITEM = 'w-[82%] shrink-0 snap-start sm:w-auto';
+
 type EventData = {
     title: string;
     dates: string;
@@ -165,9 +176,9 @@ export function EventsSection() {
                     title="À ne pas manquer au Bénin"
                     lead="Deux rendez-vous incontournables rythment le calendrier béninois, entre spiritualité et scène urbaine."
                 />
-                <div className="mt-10 grid gap-6 sm:grid-cols-2">
+                <div className={`mt-10 gap-4 sm:grid-cols-2 sm:gap-6 ${SWIPE}`}>
                     {EVENTS.map((event, i) => (
-                        <Reveal key={event.title} delay={i * 100}>
+                        <Reveal key={event.title} delay={i * 100} className={SWIPE_ITEM}>
                             <div className="overflow-hidden rounded-2xl border border-cream/10 bg-night-elevated">
                                 <div className="aspect-[16/9]">
                                     <PhotoSlot
@@ -215,9 +226,13 @@ export function CultureSection() {
                     title="Le Bénin, berceau du vodun"
                     lead="Ancien cœur du royaume du Dahomey, le Bénin est reconnu comme le berceau historique du culte vodun — une spiritualité qui a traversé l'Atlantique et marqué des cultures dans toutes les Amériques. Art royal, tissus, gastronomie et récits oraux perpétuent encore aujourd'hui cet héritage vivant."
                 />
-                <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
+                <div className={`mt-10 gap-3 sm:grid-cols-3 sm:gap-4 ${SWIPE}`}>
                     {CULTURE_PHOTOS.map((photo, i) => (
-                        <Reveal key={photo.label} delay={i * 70} className="aspect-square overflow-hidden rounded-xl">
+                        <Reveal
+                            key={photo.label}
+                            delay={i * 70}
+                            className="aspect-square w-[64%] shrink-0 snap-start overflow-hidden rounded-xl sm:w-auto"
+                        >
                             <PhotoSlot label={photo.label} src={photo.src} accent={photo.accent} />
                         </Reveal>
                     ))}
@@ -236,9 +251,9 @@ export function TouristSitesSection() {
                     eyebrow="À visiter"
                     title="Sites touristiques incontournables"
                 />
-                <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className={`mt-10 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 ${SWIPE}`}>
                     {TOURIST_SITES.map((site, i) => (
-                        <Reveal key={site.title} delay={i * 90}>
+                        <Reveal key={site.title} delay={i * 90} className={SWIPE_ITEM}>
                             <InfoCard {...site} />
                         </Reveal>
                     ))}
@@ -257,9 +272,9 @@ export function ModernBeninSection() {
                     eyebrow="Bénin moderne"
                     title="Un pays qui construit son avenir"
                 />
-                <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className={`mt-10 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 ${SWIPE}`}>
                     {MODERN_PLACES.map((place, i) => (
-                        <Reveal key={place.title} delay={i * 90}>
+                        <Reveal key={place.title} delay={i * 90} className={SWIPE_ITEM}>
                             <InfoCard {...place} />
                         </Reveal>
                     ))}

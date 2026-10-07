@@ -13,6 +13,13 @@ class GoogleAuthController extends Controller
 {
     public function redirect(): RedirectResponse
     {
+        if (blank(config('services.google.client_id')) || blank(config('services.google.client_secret'))) {
+            return redirect()->route('login')->with(
+                'googleError',
+                'La connexion Google n’est pas configurée. Ajoute GOOGLE_CLIENT_ID et GOOGLE_CLIENT_SECRET dans le fichier .env.',
+            );
+        }
+
         return Socialite::driver('google')
             ->redirectUrl(route('auth.google.callback'))
             ->redirect();

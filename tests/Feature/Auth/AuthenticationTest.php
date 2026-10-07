@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\RateLimiter;
 use Laravel\Fortify\Features;
+use Laravel\Socialite\Facades\Socialite;
 use Tests\TestCase;
 
 class AuthenticationTest extends TestCase
@@ -17,6 +18,45 @@ class AuthenticationTest extends TestCase
         $response = $this->get(route('login'));
 
         $response->assertOk();
+    }
+
+    public function test_google_login_redirect_explains_when_credentials_are_missing(): void
+    {
+        config([
+            'services.google.client_id' => null,
+            'services.google.client_secret' => null,
+        ]);
+
+        $response = $this->get(route('auth.google.redirect'));
+
+        $response->assertRedirect(route('login'));
+        $response->assertSessionHas('googleError');
+    }
+
+    public function test_google_login_redirects_to_the_provider(): void
+    {
+        config([
+            'services.google.client_id' => 'test-client-id',
+            'services.google.client_secret' => 'test-client-secret',
+        ]);
+
+        $provider = \Mockery::mock();
+        $provider->shouldReceive('redirectUrl')
+            ->once()
+            ->with(route('auth.google.callback'))
+            ->andReturnSelf();
+        $provider->shouldReceive('redirect')
+            ->once()
+            ->andReturn(redirect('https://accounts.google.com/test-oauth'));
+
+        Socialite::shouldReceive('driver')
+            ->once()
+            ->with('google')
+            ->andReturn($provider);
+
+        $response = $this->get(route('auth.google.redirect'));
+
+        $response->assertRedirect('https://accounts.google.com/test-oauth');
     }
 
     public function test_users_can_authenticate_using_the_login_screen()

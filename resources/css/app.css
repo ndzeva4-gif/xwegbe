@@ -166,6 +166,24 @@
     --sidebar-ring: #f4b740;
 }
 
+.auth-login-panel {
+    --background: #fdfbf9;
+    --foreground: #120a08;
+    --primary: #c1272d;
+    --primary-foreground: #fdfbf9;
+    --secondary: #f3e7d8;
+    --secondary-foreground: #120a08;
+    --muted: #f3e7d8;
+    --muted-foreground: #78645a;
+    --accent: #f3e7d8;
+    --accent-foreground: #120a08;
+    --destructive: #c1272d;
+    --destructive-foreground: #fdfbf9;
+    --border: #e4d3be;
+    --input: #d9c9b8;
+    --ring: #c1272d;
+}
+
 @layer base {
     * {
         @apply border-border;

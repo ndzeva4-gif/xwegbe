@@ -16,23 +16,29 @@ import PasskeyVerify from '@/components/passkey-verify';
 type Props = {
     status?: string;
     canResetPassword: boolean;
+    googleError?: string;
 };
 
-export default function Login({ status, canResetPassword }: Props) {
+export default function Login({ status, canResetPassword, googleError }: Props) {
     return (
         <>
-            <Head title="Log in" />
-
-            <PasskeyVerify />
+            <Head title="Connexion" />
 
             <div className="mb-6 flex flex-col gap-6">
+                {googleError && (
+                    <p
+                        role="alert"
+                        className="rounded-lg border border-pagne-red/30 bg-pagne-red/5 px-4 py-3 text-sm text-pagne-red"
+                    >
+                        {googleError}
+                    </p>
+                )}
                 <GoogleLoginButton label="Continuer avec Google" />
-
-                <div className="text-muted-foreground relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
-                    <span className="bg-background relative z-10 px-2">
-                        ou
-                    </span>
-                </div>
+                <PasskeyVerify
+                    label="Continuer avec une clé d’accès"
+                    loadingLabel="Vérification en cours…"
+                    separator="ou avec votre adresse e-mail"
+                />
             </div>
 
             <Form
@@ -44,42 +50,51 @@ export default function Login({ status, canResetPassword }: Props) {
                     <>
                         <div className="grid gap-6">
                             <div className="grid gap-2">
-                                <Label htmlFor="email">Email address</Label>
+                                <Label
+                                    htmlFor="email"
+                                    className="font-mono text-xs tracking-wider text-night/70 uppercase"
+                                >
+                                    Adresse e-mail
+                                </Label>
                                 <Input
                                     id="email"
                                     type="email"
                                     name="email"
                                     required
-                                    autoFocus
                                     tabIndex={1}
                                     autoComplete="email"
-                                    placeholder="email@example.com"
+                                    placeholder="nom@exemple.fr"
+                                    className="h-14 rounded-xl border-night/20 bg-cream px-4 focus-visible:border-pagne-red focus-visible:ring-pagne-red/25"
                                 />
                                 <InputError message={errors.email} />
                             </div>
 
                             <div className="grid gap-2">
-                                <div className="flex items-center">
-                                    <Label htmlFor="password">Password</Label>
-                                    {canResetPassword && (
-                                        <TextLink
-                                            href={request()}
-                                            className="ml-auto text-sm"
-                                            tabIndex={5}
-                                        >
-                                            Forgot your password?
-                                        </TextLink>
-                                    )}
-                                </div>
+                                <Label
+                                    htmlFor="password"
+                                    className="font-mono text-xs tracking-wider text-night/70 uppercase"
+                                >
+                                    Mot de passe
+                                </Label>
                                 <PasswordInput
                                     id="password"
                                     name="password"
                                     required
                                     tabIndex={2}
                                     autoComplete="current-password"
-                                    placeholder="Password"
+                                    placeholder="Votre mot de passe"
+                                    className="h-14 rounded-xl border-night/20 bg-cream px-4 focus-visible:border-pagne-red focus-visible:ring-pagne-red/25"
                                 />
                                 <InputError message={errors.password} />
+                                {canResetPassword && (
+                                    <TextLink
+                                        href={request()}
+                                        className="self-end text-sm"
+                                        tabIndex={5}
+                                    >
+                                        Mot de passe oublié ?
+                                    </TextLink>
+                                )}
                             </div>
 
                             <div className="flex items-center space-x-3">
@@ -87,26 +102,27 @@ export default function Login({ status, canResetPassword }: Props) {
                                     id="remember"
                                     name="remember"
                                     tabIndex={3}
+                                    className="border-pagne-red/50 data-[state=checked]:border-pagne-red data-[state=checked]:bg-pagne-red focus-visible:ring-pagne-red/40"
                                 />
-                                <Label htmlFor="remember">Remember me</Label>
+                                <Label htmlFor="remember">Se souvenir de moi</Label>
                             </div>
 
                             <Button
                                 type="submit"
-                                className="mt-4 w-full"
+                                className="mt-2 h-14 w-full rounded-full bg-pagne-red font-bold text-cream uppercase hover:bg-pagne-red/90"
                                 tabIndex={4}
                                 disabled={processing}
                                 data-test="login-button"
                             >
                                 {processing && <Spinner />}
-                                Log in
+                                Me connecter
                             </Button>
                         </div>
 
                         <div className="text-muted-foreground text-center text-sm">
-                            Don't have an account?{' '}
+                            Pas encore de compte ?{' '}
                             <TextLink href={register()} tabIndex={5}>
-                                Sign up
+                                Créer un compte
                             </TextLink>
                         </div>
                     </>
@@ -114,7 +130,7 @@ export default function Login({ status, canResetPassword }: Props) {
             </Form>
 
             {status && (
-                <div className="mb-4 text-center text-sm font-medium text-green-600">
+                <div className="mb-4 text-center text-sm font-medium text-pagne-green">
                     {status}
                 </div>
             )}
@@ -123,6 +139,6 @@ export default function Login({ status, canResetPassword }: Props) {
 }
 
 Login.layout = {
-    title: 'Log in to your account',
-    description: 'Enter your email and password below to log in',
+    title: 'Connexion',
+    description: 'Connectez-vous à votre compte Xwégbé.',
 };
