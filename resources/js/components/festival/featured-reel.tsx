@@ -45,7 +45,7 @@ export function FeaturedReel({
                 </p>
                 <Heading
                     id="featured-reel-heading"
-                    className="mt-6 font-display text-4xl leading-[1.08] font-extrabold uppercase text-cream sm:text-5xl lg:text-6xl"
+                    className="mt-6 font-display text-2xl leading-tight font-extrabold uppercase text-cream sm:text-3xl lg:text-4xl"
                 >
                     <span className="block text-pagne-orange">Vaudou,</span>
                     <span className="block">islam et</span>
