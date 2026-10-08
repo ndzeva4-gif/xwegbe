@@ -100,7 +100,7 @@ export default function Welcome() {
             {/* Bande latérale + overlay navigation */}
             <HomeNav auth={auth} open={navOpen} onClose={() => setNavOpen(false)} />
 
-            <div className="min-h-screen bg-night pl-14 text-cream sm:pl-16">
+            <div className="min-h-screen bg-night text-cream">
 
                 {/* Bande pagne animée — signature visuelle en haut de page */}
                 <div

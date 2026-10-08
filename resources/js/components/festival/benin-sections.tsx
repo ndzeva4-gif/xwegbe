@@ -217,6 +217,11 @@ export function EventsSection() {
                         </Reveal>
                     ))}
                 </div>
+                <div className="mt-8 text-right">
+                    <a href="/decouvrir/evenements" className="font-mono text-sm text-pagne-orange/70 transition-opacity hover:opacity-100">
+                        Voir tous les événements →
+                    </a>
+                </div>
             </div>
         </section>
     );
@@ -243,6 +248,11 @@ export function CultureSection() {
                         </Reveal>
                     ))}
                 </div>
+                <div className="mt-8 text-right">
+                    <a href="/decouvrir/culture" className="font-mono text-sm text-pagne-magenta/70 transition-opacity hover:opacity-100">
+                        Voir la page Culture →
+                    </a>
+                </div>
             </div>
         </section>
     );
@@ -263,6 +273,11 @@ export function TouristSitesSection() {
                             <InfoCard {...site} />
                         </Reveal>
                     ))}
+                </div>
+                <div className="mt-8 text-right">
+                    <a href="/decouvrir/sites" className="font-mono text-sm text-pagne-teal/70 transition-opacity hover:opacity-100">
+                        Voir tous les sites →
+                    </a>
                 </div>
             </div>
         </section>
@@ -285,6 +300,11 @@ export function ModernBeninSection() {
                         </Reveal>
                     ))}
                 </div>
+                <div className="mt-8 text-right">
+                    <a href="/decouvrir/moderne" className="font-mono text-sm text-pagne-green/70 transition-opacity hover:opacity-100">
+                        Voir le Bénin moderne →
+                    </a>
+                </div>
             </div>
         </section>
     );
@@ -302,6 +322,11 @@ export function FutureProjectsSection() {
                             title="Un pays qui se réinvente"
                             lead="Le Bénin multiplie les grands chantiers — innovation, tourisme, infrastructures — pour écrire une nouvelle page de son histoire. Xwégbé existe pour raconter cet élan : donner au monde une nouvelle raison de découvrir le Bénin."
                         />
+                        <div className="mt-8">
+                            <a href="/decouvrir/avenir" className="font-mono text-sm text-pagne-gold/70 transition-opacity hover:opacity-100">
+                                Voir les projets d'avenir →
+                            </a>
+                        </div>
                     </div>
                 </Reveal>
             </div>

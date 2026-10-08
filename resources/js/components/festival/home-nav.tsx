@@ -33,31 +33,6 @@ export function HomeNav({ auth, open, onClose }: { auth: { user: unknown }; open
 
     return (
         <>
-            {/* ── BANDE LATÉRALE FIXE ── */}
-            <div className="fixed left-0 top-0 z-40 flex h-screen w-14 flex-col items-center border-r border-cream/10 bg-night py-5 sm:w-16">
-                {/* Logo compact */}
-                <a href="/" aria-label="Accueil Xwégbé" className="block">
-                    <BrandMark className="h-5 w-5 object-contain sm:h-6 sm:w-6" />
-                </a>
-
-                {/* Séparateur pagne */}
-                <div
-                    className="mt-3 w-8 shrink-0"
-                    style={{ height: 2, backgroundImage: PAGNE, backgroundSize: '28px auto', backgroundRepeat: 'repeat', opacity: 0.4, borderRadius: 1 }}
-                    aria-hidden="true"
-                />
-
-                {/* Spacer */}
-                <div className="flex-1" />
-
-                {/* Accent pagne bas */}
-                <div
-                    className="h-1.5 w-1.5 shrink-0 rounded-full"
-                    style={{ background: 'var(--color-pagne-gold)', opacity: 0.5 }}
-                    aria-hidden="true"
-                />
-            </div>
-
             {/* ── OVERLAY PLEIN ÉCRAN ── */}
             <div
                 role="dialog"

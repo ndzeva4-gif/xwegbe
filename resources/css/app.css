@@ -95,6 +95,37 @@
     background-color: var(--color-night-elevated);
 }
 
+@utility pattern-pagne {
+    background-image: url('/images/flat-african-pattern-design/6925962.jpg');
+    background-size: 220px auto;
+    background-repeat: repeat;
+}
+
+@keyframes pagne-drift {
+    from { background-position: 0 0; }
+    to   { background-position: 220px 0; }
+}
+
+@keyframes pagne-float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-13px); }
+}
+
+@keyframes pagne-pulse-soft {
+    0%, 100% { opacity: 0.15; }
+    50%       { opacity: 0.28; }
+}
+
+@keyframes pagne-rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes pagne-spin-dots {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
 :root {
     --background: #fbf3ea;
     --foreground: #1d120d;

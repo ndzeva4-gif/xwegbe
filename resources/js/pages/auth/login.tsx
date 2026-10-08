@@ -52,7 +52,7 @@ export default function Login({ status, canResetPassword, googleError }: Props) 
                             <div className="grid gap-2">
                                 <Label
                                     htmlFor="email"
-                                    className="font-mono text-xs tracking-wider text-night/70 uppercase"
+                                    className="font-mono text-xs tracking-wider text-cream/50 uppercase"
                                 >
                                     Adresse e-mail
                                 </Label>
@@ -64,7 +64,7 @@ export default function Login({ status, canResetPassword, googleError }: Props) 
                                     tabIndex={1}
                                     autoComplete="email"
                                     placeholder="nom@exemple.fr"
-                                    className="h-14 rounded-xl border-night/20 bg-cream px-4 focus-visible:border-pagne-red focus-visible:ring-pagne-red/25"
+                                    className="h-14 rounded-xl border-cream/15 bg-white/6 px-4 text-cream placeholder:text-cream/30 focus-visible:border-pagne-gold focus-visible:ring-pagne-gold/20"
                                 />
                                 <InputError message={errors.email} />
                             </div>
@@ -72,7 +72,7 @@ export default function Login({ status, canResetPassword, googleError }: Props) 
                             <div className="grid gap-2">
                                 <Label
                                     htmlFor="password"
-                                    className="font-mono text-xs tracking-wider text-night/70 uppercase"
+                                    className="font-mono text-xs tracking-wider text-cream/50 uppercase"
                                 >
                                     Mot de passe
                                 </Label>
@@ -83,7 +83,7 @@ export default function Login({ status, canResetPassword, googleError }: Props) 
                                     tabIndex={2}
                                     autoComplete="current-password"
                                     placeholder="Votre mot de passe"
-                                    className="h-14 rounded-xl border-night/20 bg-cream px-4 focus-visible:border-pagne-red focus-visible:ring-pagne-red/25"
+                                    className="h-14 rounded-xl border-cream/15 bg-white/6 px-4 text-cream placeholder:text-cream/30 focus-visible:border-pagne-gold focus-visible:ring-pagne-gold/20"
                                 />
                                 <InputError message={errors.password} />
                                 {canResetPassword && (
@@ -102,9 +102,9 @@ export default function Login({ status, canResetPassword, googleError }: Props) 
                                     id="remember"
                                     name="remember"
                                     tabIndex={3}
-                                    className="border-pagne-red/50 data-[state=checked]:border-pagne-red data-[state=checked]:bg-pagne-red focus-visible:ring-pagne-red/40"
+                                    className="border-cream/30 data-[state=checked]:border-pagne-gold data-[state=checked]:bg-pagne-gold focus-visible:ring-pagne-gold/40"
                                 />
-                                <Label htmlFor="remember">Se souvenir de moi</Label>
+                                <Label htmlFor="remember" className="text-cream/60">Se souvenir de moi</Label>
                             </div>
 
                             <Button
@@ -119,7 +119,7 @@ export default function Login({ status, canResetPassword, googleError }: Props) 
                             </Button>
                         </div>
 
-                        <div className="text-muted-foreground text-center text-sm">
+                        <div className="text-center text-sm text-cream/40">
                             Pas encore de compte ?{' '}
                             <TextLink href={register()} tabIndex={5}>
                                 Créer un compte

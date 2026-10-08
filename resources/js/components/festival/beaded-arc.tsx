@@ -8,21 +8,34 @@ export function BeadedArc({ className = '' }: { className?: string }) {
             aria-hidden="true"
             className={className}
         >
-            <path
-                d={path}
-                stroke="var(--color-pagne-gold)"
-                strokeWidth="11"
-                strokeLinecap="round"
-                strokeDasharray="0 30"
-            />
-            <path
-                d={path}
-                stroke="var(--color-pagne-orange)"
-                strokeWidth="9"
-                strokeLinecap="round"
-                strokeDasharray="0 30"
-                strokeDashoffset="15"
-            />
+            <g style={{ transformOrigin: '320px 310px', animation: 'bead-spin 4s linear infinite' } as React.CSSProperties}>
+                <path
+                    d={path}
+                    stroke="var(--color-pagne-gold)"
+                    strokeWidth="11"
+                    strokeLinecap="round"
+                    strokeDasharray="0 30"
+                />
+                <path
+                    d={path}
+                    stroke="var(--color-pagne-orange)"
+                    strokeWidth="9"
+                    strokeLinecap="round"
+                    strokeDasharray="0 30"
+                    strokeDashoffset="15"
+                />
+            </g>
+
+            <style>{`
+                @keyframes bead-spin {
+                    0%   { transform: rotate(0deg); }
+                    75%  { transform: rotate(360deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                @media (prefers-reduced-motion: reduce) {
+                    g[style] { animation: none !important; }
+                }
+            `}</style>
         </svg>
     );
 }

@@ -37,7 +37,7 @@ export default function Documentaires() {
 
                 <div className="px-6 pb-4 pt-10 sm:px-10">
                     <div className="mx-auto max-w-6xl">
-                        <p className="font-mono text-xs uppercase tracking-widest text-pagne-magenta">07</p>
+                        <p className="font-mono text-xs uppercase tracking-widest text-pagne-magenta">06</p>
                         <h1 className="mt-2 font-display text-4xl font-extrabold sm:text-5xl">Documentaires</h1>
                         <p className="mt-4 max-w-xl text-base text-cream/55">
                             Films et documentaires consacrés au Bénin — histoire, culture, société et nature.

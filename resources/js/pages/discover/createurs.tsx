@@ -38,7 +38,7 @@ export default function Createurs({ entries }: Props) {
 
                 <div className="px-6 pt-10 pb-6 sm:px-10">
                     <div className="mx-auto max-w-6xl">
-                        <p className="font-mono text-xs uppercase tracking-widest text-pagne-red">06</p>
+                        <p className="font-mono text-xs uppercase tracking-widest text-pagne-red">05</p>
                         <h1 className="mt-2 font-display text-4xl font-extrabold sm:text-5xl">
                             Créateurs
                         </h1>

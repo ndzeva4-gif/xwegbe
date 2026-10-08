@@ -14,7 +14,7 @@ export default function Avenir() {
 
                 <div className="px-6 pb-4 pt-10 sm:px-10">
                     <div className="mx-auto max-w-6xl">
-                        <p className="font-mono text-xs uppercase tracking-widest text-pagne-gold">05</p>
+                        <p className="font-mono text-xs uppercase tracking-widest text-pagne-gold">11</p>
                         <h1 className="mt-2 font-display text-4xl font-extrabold sm:text-5xl">Projets d'avenir</h1>
                     </div>
                 </div>

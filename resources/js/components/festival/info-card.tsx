@@ -12,7 +12,7 @@ export type InfoCardData = {
 export function InfoCard({ title, tag, description, photoLabel, photoSrc, accent = 'gold' }: InfoCardData) {
     return (
         <div className="overflow-hidden rounded-2xl border border-cream/10 bg-night-elevated">
-            <div className="aspect-[4/3]">
+            <div className="aspect-square">
                 <PhotoSlot label={photoLabel} src={photoSrc} accent={accent} />
             </div>
             <div className="p-6">

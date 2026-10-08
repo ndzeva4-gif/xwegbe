@@ -1,0 +1,118 @@
+<?php
+
+return [
+    [
+        'id' => 'creator_005',
+        'name' => 'Legend Beatz',
+        'username' => 'legendbeatz',
+        'platforms' => [
+            'tiktok' => '@legendbeatz',
+            'instagram' => null,
+        ],
+        'category' => 'Musique',
+        'content_type' => ['musique', 'production musicale'],
+        'city' => 'Cotonou',
+        'country' => 'Bénin',
+        'followers' => [
+            'tiktok' => 2900000,
+            'instagram' => null,
+        ],
+        'engagement_rate' => 15.38,
+        'verified_data' => true,
+    ],
+    [
+        'id' => 'creator_006',
+        'name' => 'RestauChezChiro',
+        'username' => 'restauchezchiro',
+        'platforms' => [
+            'tiktok' => '@restauchezchiro',
+            'instagram' => null,
+        ],
+        'category' => 'Food',
+        'content_type' => ['cuisine', 'restaurant', 'food'],
+        'city' => 'Cotonou',
+        'country' => 'Bénin',
+        'followers' => [
+            'tiktok' => 2800000,
+            'instagram' => null,
+        ],
+        'engagement_rate' => 6.51,
+        'verified_data' => true,
+    ],
+    [
+        'id' => 'creator_007',
+        'name' => 'Ery Ery',
+        'username' => 'ery133',
+        'platforms' => [
+            'tiktok' => '@ery133',
+            'instagram' => null,
+        ],
+        'category' => 'Divertissement',
+        'content_type' => ['divertissement', 'lifestyle'],
+        'city' => 'Cotonou',
+        'country' => 'Bénin',
+        'followers' => [
+            'tiktok' => 2200000,
+            'instagram' => null,
+        ],
+        'engagement_rate' => 14.54,
+        'verified_data' => true,
+    ],
+    [
+        'id' => 'creator_008',
+        'name' => 'Félicité Behanzin',
+        'username' => 'behanzin.felicite.y.01',
+        'platforms' => [
+            'tiktok' => '@behanzin.felicite.y.01',
+            'instagram' => null,
+        ],
+        'category' => 'Lifestyle',
+        'content_type' => ['lifestyle', 'entrepreneuriat'],
+        'city' => 'Cotonou',
+        'country' => 'Bénin',
+        'followers' => [
+            'tiktok' => 2000000,
+            'instagram' => null,
+        ],
+        'engagement_rate' => 5.75,
+        'verified_data' => true,
+    ],
+    [
+        'id' => 'creator_009',
+        'name' => 'Shadé OGOU',
+        'username' => 'learnwithshade',
+        'platforms' => [
+            'tiktok' => '@learnwithshade',
+            'instagram' => null,
+        ],
+        'category' => 'Éducation',
+        'content_type' => ['éducation', 'conseils', 'apprentissage'],
+        'city' => 'Cotonou',
+        'country' => 'Bénin',
+        'followers' => [
+            'tiktok' => 1800000,
+            'instagram' => null,
+        ],
+        'engagement_rate' => null,
+        'verified_data' => true,
+    ],
+    [
+        'id' => 'creator_010',
+        'name' => 'Éric Le Chinois',
+        'username' => 'mamanmiraofficiel',
+        'platforms' => [
+            'tiktok' => '@mamanmiraofficiel',
+            'instagram' => null,
+        ],
+        'category' => 'Divertissement',
+        'content_type' => ['humour', 'divertissement', 'création de contenu'],
+        'city' => 'Cotonou',
+        'country' => 'Bénin',
+        'followers' => [
+            'tiktok' => 1700000,
+            'instagram' => null,
+        ],
+        'engagement_rate' => 15.27,
+        'verified_data' => true,
+    ],
+];
