@@ -1,87 +1,82 @@
+import { Link } from '@inertiajs/react';
+
 const TOPICS = [
     {
-        id: 'horizon-plats',
         number: '01',
         title: 'Plats béninois',
-        description: 'L’atassi en tête de notre sélection éditoriale.',
+        description: "L'atassi en tête de notre sélection éditoriale.",
         accent: 'text-pagne-orange',
+        href: '/decouvrir/plats',
     },
     {
-        id: 'horizon-restaurants',
         number: '02',
         title: 'Restaurants 100 % béninois',
         description: 'Des adresses présentées après vérification.',
         accent: 'text-pagne-magenta',
+        href: '/decouvrir/restaurants',
     },
     {
-        id: 'horizon-marques',
         number: '03',
         title: 'Marques Made in Bénin',
         description: 'Des marques locales et leurs liens officiels.',
         accent: 'text-pagne-gold',
+        href: '/decouvrir/marques',
     },
     {
-        id: 'horizon-createurs',
         number: '04',
         title: 'Créateurs et pages Instagram',
         description: 'Des portraits écrits pour Xwégbé, sans reprendre leurs photos.',
         accent: 'text-pagne-teal',
+        href: '/decouvrir/createurs',
     },
     {
-        id: 'horizon-documentaires',
         number: '05',
         title: 'Documentaires',
         description: 'Des œuvres à voir chez leurs diffuseurs officiels.',
         accent: 'text-pagne-green',
+        href: '/decouvrir/documentaires',
     },
     {
-        id: 'horizon-actualites',
         number: '06',
         title: 'Actualités',
         description: 'Un titre et un lien vers la source, jamais un article recopié.',
         accent: 'text-pagne-red',
+        href: '/decouvrir/une',
     },
     {
-        id: 'horizon-infos',
         number: '07',
-        title: 'Infos pratiques',
-        description: 'Des repères sourcés pour préparer une découverte du Bénin.',
-        accent: 'text-pagne-orange',
-    },
-    {
-        id: 'horizon-evenements',
-        number: '08',
         title: 'Événements',
         description: 'Des rendez-vous présentés avec leurs dates et sources vérifiées.',
         accent: 'text-pagne-magenta',
+        href: '/decouvrir/evenements',
     },
     {
-        id: 'horizon-culture',
-        number: '09',
+        number: '08',
         title: 'Culture & héritage',
         description: 'Des récits et pratiques abordés avec respect et précision.',
         accent: 'text-pagne-teal',
+        href: '/decouvrir/culture',
     },
     {
-        id: 'horizon-sites',
-        number: '10',
+        number: '09',
         title: 'Sites à visiter',
-        description: 'Des lieux accompagnés d’informations vérifiées.',
+        description: "Des lieux accompagnés d'informations vérifiées.",
         accent: 'text-pagne-green',
+        href: '/decouvrir/sites',
     },
     {
-        id: 'horizon-moderne',
-        number: '11',
+        number: '10',
         title: 'Bénin moderne',
         description: 'Des initiatives présentées à partir de leurs sources.',
         accent: 'text-pagne-gold',
+        href: '/decouvrir/moderne',
     },
     {
-        id: 'horizon-avenir',
-        number: '12',
-        title: 'Projets d’avenir',
+        number: '11',
+        title: 'Projets d\'avenir',
         description: 'Des projets reliés à des informations officielles.',
         accent: 'text-pagne-red',
+        href: '/decouvrir/avenir',
     },
 ];
 
@@ -117,27 +112,21 @@ export function DiscoverIndex() {
 
                 <ol className="divide-y divide-cream/10">
                     {TOPICS.map((topic) => (
-                        <li
-                            key={topic.number}
-                            id={
-                                topic.id === 'horizon-marques' ||
-                                topic.id === 'horizon-createurs'
-                                    ? undefined
-                                    : topic.id
-                            }
-                            className="scroll-mt-20 grid gap-2 py-5 sm:grid-cols-[3.5rem_minmax(0,0.9fr)_minmax(0,1.1fr)] sm:items-baseline sm:gap-5 sm:py-6"
-                        >
-                            <span
-                                className={`font-mono text-xs ${topic.accent}`}
+                        <li key={topic.number}>
+                            <Link
+                                href={topic.href}
+                                className="group grid gap-2 py-5 transition-colors hover:bg-cream/3 sm:grid-cols-[3.5rem_minmax(0,0.9fr)_minmax(0,1.1fr)] sm:items-baseline sm:gap-5 sm:py-6"
                             >
-                                {topic.number}
-                            </span>
-                            <h3 className="font-display text-lg font-semibold sm:text-xl">
-                                {topic.title}
-                            </h3>
-                            <p className="text-sm leading-relaxed text-cream/60 sm:text-base">
-                                {topic.description}
-                            </p>
+                                <span className={`font-mono text-xs ${topic.accent}`}>
+                                    {topic.number}
+                                </span>
+                                <h3 className="font-display text-lg font-semibold transition-colors group-hover:text-pagne-gold sm:text-xl">
+                                    {topic.title}
+                                </h3>
+                                <p className="text-sm leading-relaxed text-cream/60 sm:text-base">
+                                    {topic.description}
+                                </p>
+                            </Link>
                         </li>
                     ))}
                 </ol>

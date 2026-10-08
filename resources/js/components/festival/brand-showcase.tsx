@@ -1,5 +1,6 @@
 type Profile = {
     slug: string;
+    category: string;
     title: string;
     summary: string;
     content: string | null;
@@ -53,16 +54,32 @@ export function BrandShowcase({
                         Marques
                         <span className="text-pagne-orange"> à découvrir</span>
                     </h2>
+                    <a
+                        href="/decouvrir/marques"
+                        className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-pagne-gold opacity-70 transition-opacity hover:opacity-100"
+                    >
+                        Voir la page Marques →
+                    </a>
 
                     <ol className="mt-7 divide-y divide-cream/10">
                         {brands.map((brand, index) => (
                             <li
                                 key={brand.slug}
                                 id={brand.slug === 'oqp-tribe' ? 'brand-oqp-tribe' : undefined}
-                                className="grid grid-cols-[4.5rem_minmax(0,1fr)] gap-x-4 gap-y-3 py-6 sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-x-5 sm:py-7"
+                                className="group relative grid grid-cols-[4.5rem_minmax(0,1fr)] gap-x-4 gap-y-3 py-6 sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-x-5 sm:py-7"
                             >
+                                {/* Lien étiré — rend toute la carte cliquable */}
+                                {brand.source_url && (
+                                    <a
+                                        href={brand.source_url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Voir ${brand.title}`}
+                                        className="absolute inset-0 z-[1]"
+                                    />
+                                )}
                                 <div
-                                    className={`flex size-[4.5rem] items-center justify-center overflow-hidden rounded-full border border-cream/15 sm:size-20 ${brandSurface(brand.slug)}`}
+                                    className={`relative z-[2] flex size-[4.5rem] items-center justify-center overflow-hidden rounded-full border border-cream/15 sm:size-20 ${brandSurface(brand.slug)}`}
                                 >
                                     {brand.logo_path ? (
                                         <img
@@ -77,36 +94,26 @@ export function BrandShowcase({
                                         </span>
                                     )}
                                 </div>
-                                <div className="min-w-0 self-center">
+                                <div className="relative z-[2] min-w-0 self-center">
                                     <p className="font-mono text-[11px] text-pagne-magenta">
                                         {String(index + 1).padStart(2, '0')}
                                     </p>
-                                    <h3 className="mt-1 font-display text-lg font-semibold sm:text-xl">
+                                    <h3 className="mt-1 font-display text-lg font-semibold transition-colors group-hover:text-pagne-gold sm:text-xl">
                                         {brand.title}
                                     </h3>
                                     <p className="mt-2 text-sm leading-relaxed text-cream/75">
                                         {brand.summary}
                                     </p>
                                 </div>
-                                <div className="col-start-2 min-w-0 sm:col-start-2">
+                                <div className="relative z-[2] col-start-2 min-w-0 sm:col-start-2">
                                     {brand.content && (
                                         <p className="text-sm leading-relaxed text-cream/55">
                                             {brand.content}
                                         </p>
                                     )}
-                                    {brand.source_url && (
-                                        <a
-                                            href={brand.source_url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="mt-3 inline-flex min-h-10 items-center border-b border-pagne-gold/50 text-xs font-semibold text-pagne-gold underline-offset-4 hover:text-pagne-orange hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pagne-gold"
-                                        >
-                                            Voir la source officielle
-                                        </a>
-                                    )}
                                 </div>
                                 {brand.gallery && brand.gallery.length > 0 && (
-                                    <div className="col-span-2 -mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto overflow-y-hidden px-5 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0">
+                                    <div className="relative z-[2] col-span-2 -mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto overflow-y-hidden px-5 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0">
                                         {brand.gallery.map((image) => (
                                             <figure
                                                 key={image.path}
@@ -131,17 +138,25 @@ export function BrandShowcase({
                     <aside
                         id="horizon-createurs"
                         aria-labelledby="creator-heading"
-                        className="scroll-mt-20 border-t border-pagne-magenta/50 pt-7 lg:border-t-0 lg:border-l lg:border-pagne-magenta/50 lg:pt-0 lg:pl-8"
+                        className="scroll-mt-20 border-t border-cream/10 pt-7 lg:border-t-0 lg:border-l lg:border-cream/10 lg:pt-0 lg:pl-8"
                     >
                         <p className="font-mono text-xs text-pagne-teal">
                             RENCONTRE
                         </p>
-                        <h2
-                            id="creator-heading"
-                            className="mt-3 font-display text-2xl font-bold sm:text-3xl"
-                        >
-                            {featuredCreator.title}
-                        </h2>
+                        <div className="flex items-baseline justify-between gap-3">
+                            <h2
+                                id="creator-heading"
+                                className="mt-3 font-display text-2xl font-bold sm:text-3xl"
+                            >
+                                {featuredCreator.title}
+                            </h2>
+                            <a
+                                href="/decouvrir/createurs"
+                                className="mt-3 shrink-0 font-mono text-xs text-pagne-teal opacity-70 transition-opacity hover:opacity-100"
+                            >
+                                Tous les créateurs →
+                            </a>
+                        </div>
                         <p className="mt-4 text-sm leading-relaxed text-cream/75 sm:text-base">
                             {featuredCreator.summary}
                         </p>
@@ -150,7 +165,7 @@ export function BrandShowcase({
                                 {featuredCreator.content}
                             </p>
                         )}
-                        <p className="mt-5 border-l-2 border-pagne-gold pl-3 text-sm leading-relaxed text-cream/80">
+                        <p className="mt-5 pl-0 text-sm leading-relaxed text-cream/55 italic">
                             OQP Tribe est présentée séparément dans la liste des
                             marques. Aucun lien de fondation n’est affirmé.
                         </p>
@@ -164,6 +179,62 @@ export function BrandShowcase({
                                 Voir son profil public
                             </a>
                         )}
+
+                        <div className="mt-8">
+                            <p className="font-mono text-xs text-pagne-gold mb-4">
+                                Tous les créateurs
+                            </p>
+                            <div className="max-h-[340px] overflow-y-auto pr-2">
+                                <ul className="space-y-1">
+                                    {creators
+                                        .filter((c) => c.slug !== 'ng-thecreator')
+                                        .map((creator) => (
+                                            <li key={creator.slug}>
+                                                <a
+                                                    href={creator.source_url ?? undefined}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="
+                                                        flex items-center gap-3 border-b border-cream/5
+                                                        py-2 last:border-0 hover:bg-cream/5
+                                                        rounded-md
+                                                    "
+                                                >
+                                                    <div className="
+                                                        flex size-9 shrink-0 items-center
+                                                        justify-center rounded-full
+                                                        bg-pagne-gold/20
+                                                    ">
+                                                        {creator.logo_path ? (
+                                                            <img
+                                                                src={publicImage(creator.logo_path)}
+                                                                alt=""
+                                                                className="size-full rounded-full object-cover"
+                                                            />
+                                                        ) : (
+                                                            <span className="
+                                                                font-display text-xs
+                                                                font-bold text-pagne-gold
+                                                            ">
+                                                                {creator.title.charAt(0)}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    <span className="text-sm text-cream/80">
+                                                        {creator.title}
+                                                    </span>
+                                                    <span className="
+                                                        ml-auto font-mono text-[10px]
+                                                        text-pagne-magenta/60
+                                                    ">
+                                                        {creator.category}
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        ))}
+                                </ul>
+                            </div>
+                        </div>
                     </aside>
                 )}
             </div>

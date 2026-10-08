@@ -1,4 +1,4 @@
-import { InfoCard, type InfoCardData } from '@/components/festival/info-card';
+﻿import { InfoCard, type InfoCardData } from '@/components/festival/info-card';
 import { ACCENT_TEXT, PhotoSlot, type PagneAccent } from '@/components/festival/photo-slot';
 import { Reveal } from '@/components/festival/reveal';
 import { SectionHeading } from '@/components/festival/section-heading';
@@ -28,10 +28,10 @@ type EventData = {
 const EVENTS: EventData[] = [
     {
         title: 'WeLovEya Festival',
-        dates: '27 – 28 décembre',
-        place: 'Esplanade de l’Amazone, Cotonou',
+        dates: '26 – 27 décembre 2026',
+        place: 'Cotonou',
         description:
-            'Fin décembre, Cotonou devient une capitale de l’afrobeats. Le plus grand festival urbain du pays réunit chaque année des dizaines de milliers de festivaliers autour des plus grands noms de la scène ouest-africaine et internationale.',
+            "Fin décembre, Cotonou devient une capitale de l'afrobeats. Le plus grand festival urbain du pays réunit des dizaines de milliers de festivaliers autour des plus grands noms de la scène ouest-africaine et internationale. Programmation à paraître.",
         photoLabel: 'WeLovEya Festival, Cotonou',
         photoSrc: '/images/benin/welove-eya.jpg',
         accent: 'magenta',
@@ -42,11 +42,21 @@ const EVENTS: EventData[] = [
         dates: '8 – 10 janvier',
         place: 'Ouidah',
         description:
-            'Trois jours durant lesquels Ouidah devient la scène vivante du vodun : cérémonies, concerts, expositions et danses. Le vodun est religion officielle au Bénin depuis 1996 ; le 10 janvier est jour férié national.',
+            "Trois jours durant lesquels Ouidah devient la scène vivante du vodun : cérémonies de sortie des couvents, défilés de Zangbéto et d'Egungun, village artisanal, concerts en soirée sur la plage. Le 10 janvier est jour férié national. Édition 2026 terminée.",
         photoLabel: 'Vodun Days, Ouidah',
         photoSrc: '/images/benin/vodun-days.jpg',
         accent: 'red',
         learnMoreUrl: 'https://vodundays.bj/',
+    },
+    {
+        title: 'Gaani',
+        dates: '25 – 27 août',
+        place: 'Nikki',
+        description:
+            'Grande fête identitaire des Baatonu, des Boo et des communautés alliées du nord du Bénin. Sortie des tambours sacrés, fête principale et cérémonie Kayessi rythment trois jours de célébration. Édition 2026 terminée.',
+        photoLabel: 'Gaani, Nikki',
+        accent: 'gold',
+        learnMoreUrl: 'https://beninwebtv.bj/',
     },
 ];
 
@@ -64,19 +74,19 @@ const CULTURE_PHOTOS: { label: string; src?: string; accent: PagneAccent }[] = [
 
 const TOURIST_SITES: InfoCardData[] = [
     {
-        title: 'Palais royaux d’Abomey',
+        title: "Palais royaux d'Abomey",
         tag: 'Patrimoine UNESCO',
         description:
-            'Dix palais de terre, ornés de bas-reliefs racontant l’histoire des rois du royaume du Dahomey (1600-1894), ancienne capitale du pays.',
-        photoLabel: 'Palais royaux d’Abomey',
+            "Dix palais de terre, ornés de bas-reliefs racontant l'histoire des rois du royaume du Dahomey (1600-1894), ancienne capitale du pays.",
+        photoLabel: "Palais royaux d'Abomey",
         photoSrc: '/images/benin/site-abomey.jpg',
         accent: 'gold',
     },
     {
         title: 'Ganvié',
-        tag: 'La Venise de l’Afrique',
+        tag: "La Venise de l'Afrique",
         description:
-            'Le plus grand village lacustre d’Afrique, bâti sur le lac Nokoué par le peuple Tofinu pour échapper aux razzias esclavagistes. Plus de 20 000 habitants.',
+            "Le plus grand village lacustre d'Afrique, bâti sur le lac Nokoué par le peuple Tofinu pour échapper aux razzias esclavagistes. Plus de 20 000 habitants.",
         photoLabel: 'Village lacustre de Ganvié',
         photoSrc: '/images/benin/site-ganvie.jpg',
         accent: 'teal',
@@ -85,7 +95,7 @@ const TOURIST_SITES: InfoCardData[] = [
         title: 'Parc national de la Pendjari',
         tag: 'Réserve de biosphère UNESCO',
         description:
-            '4 700 km² au nord du pays : lions, éléphants, guépards et plus de 400 espèces d’oiseaux, l’une des dernières grandes savanes sauvages d’Afrique de l’Ouest.',
+            "4 700 km² au nord du pays : lions, éléphants, guépards et plus de 400 espèces d'oiseaux, l'une des dernières grandes savanes sauvages d'Afrique de l'Ouest.",
         photoLabel: 'Entrée du parc de la Pendjari',
         photoSrc: '/images/benin/site-pendjari.jpg',
         accent: 'orange',
@@ -94,7 +104,7 @@ const TOURIST_SITES: InfoCardData[] = [
         title: 'Route des Esclaves',
         tag: 'Mémoire',
         description:
-            'De la Place Chacha à la Porte du Non-Retour, un parcours mémoriel à Ouidah qui retrace l’histoire de la traite atlantique.',
+            "De la Place Chacha à la Porte du Non-Retour, un parcours mémoriel à Ouidah qui retrace l'histoire de la traite atlantique.",
         photoLabel: 'Porte du Non-Retour, Ouidah',
         photoSrc: '/images/benin/site-route-esclaves.jpg',
         accent: 'magenta',
@@ -103,7 +113,7 @@ const TOURIST_SITES: InfoCardData[] = [
         title: 'Chutes de Kota',
         tag: 'Nature, Natitingou',
         description:
-            'Une cascade nichée près de Natitingou, dans les collines de l’Atacora au nord du pays — un des rendez-vous nature les plus photographiés du Bénin.',
+            "Une cascade nichée près de Natitingou, dans les collines de l'Atacora au nord du pays — un des rendez-vous nature les plus photographiés du Bénin.",
         photoLabel: 'Chutes de Kota, Natitingou',
         photoSrc: '/images/benin/site-kota-falls.jpg',
         accent: 'green',
@@ -112,7 +122,7 @@ const TOURIST_SITES: InfoCardData[] = [
         title: 'Mémorial du Grand Jubilé',
         tag: 'Ouidah',
         description:
-            'Face à l’océan, ce monument commémore l’arrivée des premiers messagers de la foi chrétienne au Dahomey — une étape du parcours mémoriel de Ouidah.',
+            "Face à l'océan, ce monument commémore l'arrivée des premiers messagers de la foi chrétienne au Dahomey — une étape du parcours mémoriel de Ouidah.",
         photoLabel: 'Mémorial du Grand Jubilé, Ouidah',
         photoSrc: '/images/benin/site-grand-jubile.jpg',
         accent: 'red',
@@ -124,7 +134,7 @@ const MODERN_PLACES: InfoCardData[] = [
         title: 'Aéroport Cardinal Bernardin Gantin',
         tag: 'Infrastructure',
         description:
-            'L’aéroport international de Cotonou se modernise : extension du terminal, nouvelles zones commerciales, capacité doublée. Un chantier de 20 milliards de FCFA porté par Bénin Révélé.',
+            "L'aéroport international de Cotonou se modernise : extension du terminal, nouvelles zones commerciales, capacité doublée.",
         photoLabel: 'Aéroport de Cotonou',
         accent: 'orange',
     },
@@ -141,7 +151,7 @@ const MODERN_PLACES: InfoCardData[] = [
         title: 'Cotonou en mouvement',
         tag: 'Vie urbaine',
         description:
-            'Motos, marchés et gratte-ciel en chantier : la capitale économique du pays ne s’arrête jamais, entre tradition commerçante et modernisation rapide.',
+            "Motos, marchés et gratte-ciel en chantier : la capitale économique du pays ne s'arrête jamais, entre tradition commerçante et modernisation rapide.",
         photoLabel: 'Rue animée de Cotonou',
         photoSrc: '/images/benin/moderne-cotonou.jpg',
         accent: 'teal',
@@ -156,11 +166,11 @@ const MODERN_PLACES: InfoCardData[] = [
         accent: 'gold',
     },
     {
-        title: 'Statue de l’Amazone',
+        title: "Statue de l'Amazone",
         tag: 'Monument, Cotonou',
         description:
-            'À l’entrée de Cotonou, cette statue rend hommage aux Amazones du Dahomey — guerrières historiques — et compte parmi les plus hauts monuments d’Afrique.',
-        photoLabel: 'Statue de l’Amazone, Cotonou',
+            "À l'entrée de Cotonou, cette statue rend hommage aux Amazones du Dahomey — guerrières historiques — et compte parmi les plus hauts monuments d'Afrique.",
+        photoLabel: "Statue de l'Amazone, Cotonou",
         photoSrc: '/images/benin/moderne-statue.jpg',
         accent: 'red',
     },
@@ -174,12 +184,17 @@ export function EventsSection() {
                     accent="orange"
                     eyebrow="Temps forts"
                     title="À ne pas manquer au Bénin"
-                    lead="Deux rendez-vous incontournables rythment le calendrier béninois, entre spiritualité et scène urbaine."
+                    lead="Rendez-vous incontournables du calendrier béninois, entre spiritualité, culture et scène urbaine."
                 />
-                <div className={`mt-10 gap-4 sm:grid-cols-2 sm:gap-6 ${SWIPE}`}>
+                <div className={`mt-10 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 ${SWIPE}`}>
                     {EVENTS.map((event, i) => (
                         <Reveal key={event.title} delay={i * 100} className={SWIPE_ITEM}>
-                            <div className="overflow-hidden rounded-2xl border border-cream/10 bg-night-elevated">
+                            <a
+                                href={event.learnMoreUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group block overflow-hidden rounded-2xl border border-cream/10 bg-night-elevated transition-colors hover:border-cream/20"
+                            >
                                 <div className="aspect-[16/9]">
                                     <PhotoSlot
                                         label={event.photoLabel}
@@ -188,7 +203,7 @@ export function EventsSection() {
                                     />
                                 </div>
                                 <div className="p-6">
-                                    <h3 className="font-display text-2xl uppercase">
+                                    <h3 className="font-display text-2xl uppercase transition-colors group-hover:text-pagne-gold">
                                         {event.title}
                                     </h3>
                                     <p className="mt-1 font-mono text-xs tracking-widest text-pagne-gold uppercase">
@@ -197,17 +212,8 @@ export function EventsSection() {
                                     <p className="mt-3 text-sm text-cream/65">
                                         {event.description}
                                     </p>
-                                    <a
-                                        href={event.learnMoreUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`mt-4 inline-flex items-center gap-1 text-sm font-bold uppercase tracking-wide transition-opacity hover:opacity-80 ${ACCENT_TEXT[event.accent]}`}
-                                    >
-                                        En savoir plus
-                                        <span aria-hidden="true">→</span>
-                                    </a>
                                 </div>
-                            </div>
+                            </a>
                         </Reveal>
                     ))}
                 </div>
@@ -294,7 +300,7 @@ export function FutureProjectsSection() {
                             accent="gold"
                             eyebrow="Projets d'avenir"
                             title="Un pays qui se réinvente"
-                            lead="Porté par le programme Bénin Révélé, le pays multiplie les grands chantiers — innovation, tourisme, infrastructures — pour écrire une nouvelle page de son histoire. Xwégbé existe pour raconter cet élan : donner au monde une nouvelle raison de découvrir le Bénin."
+                            lead="Le Bénin multiplie les grands chantiers — innovation, tourisme, infrastructures — pour écrire une nouvelle page de son histoire. Xwégbé existe pour raconter cet élan : donner au monde une nouvelle raison de découvrir le Bénin."
                         />
                     </div>
                 </Reveal>
