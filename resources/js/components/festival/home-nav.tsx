@@ -102,7 +102,7 @@ export function HomeNav({ auth, open, onClose }: { auth: { user: unknown }; open
 
                 {/* PANNEAU DROIT — featured content (desktop uniquement) */}
                 <div className="hidden flex-1 flex-col bg-night-elevated px-8 py-7 lg:flex">
-                    <BrandMark className="h-8 w-auto" />
+                    <BrandMark className="h-6 w-auto" />
 
                     <div className="mt-6 flex-1 space-y-4">
                         <div>
