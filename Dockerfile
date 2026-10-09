@@ -21,7 +21,9 @@ COPY . .
 COPY --from=assets /app/public/build ./public/build
 
 RUN composer install --no-dev --optimize-autoloader --no-interaction \
-    && chmod +x docker/entrypoint.sh
+    && chmod +x docker/entrypoint.sh \
+    && mkdir -p storage/framework/{sessions,views,cache} bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
 
 ENV APP_ENV=production
 ENV APP_DEBUG=false
@@ -29,4 +31,4 @@ ENV LOG_CHANNEL=stderr
 
 EXPOSE 10000
 
-CMD ["docker/entrypoint.sh"]
+CMD ["/bin/bash", "/var/www/html/docker/entrypoint.sh"]
