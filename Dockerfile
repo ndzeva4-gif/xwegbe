@@ -1,10 +1,10 @@
 # Stage 1: build frontend assets (Tailwind CSS + React/Inertia bundle + self-hosted fonts)
-FROM node:24-slim AS assets
+FROM node:22 AS assets
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
-RUN npm run build
+RUN NODE_OPTIONS=--max-old-space-size=2048 npm run build
 
 # Stage 2: PHP application
 FROM php:8.4-cli
