@@ -1,0 +1,55 @@
+services:
+  - type: web
+    name: xwegbe
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        sync: false          # à coller depuis : php artisan key:generate --show
+      - key: APP_URL
+        fromService:
+          type: web
+          name: xwegbe
+          property: url
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: xwegbe-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: xwegbe-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: xwegbe-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: xwegbe-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: xwegbe-db
+          property: password
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: LOG_CHANNEL
+        value: stderr
+
+databases:
+  - name: xwegbe-db
+    plan: free
+    databaseName: xwegbe
+    user: xwegbe
